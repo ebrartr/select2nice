@@ -47,3 +47,71 @@
     color: black !important;
     font-weight: 700 !important;
 }
+
+
+
+
+.fadeIn {
+    -webkit-animation-name: fadeIn;
+    animation-name: fadeIn;
+}
+
+
+.myPulse {
+    background-color: rgb(0,255,0, 1);
+    border-radius: 50%;
+    animation: myPulseAnimate 2s linear infinite;
+    cursor: pointer !important;
+}
+
+    .myPulse i {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 30px;
+        color: #fff;
+        height: 100%;
+        cursor: pointer !important;
+    }
+
+
+.animated {
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+.bxSecilen {
+    margin-top: 7px;
+    margin-right:0px;
+    margin-right:5px;
+    color: green;
+    width: 10px;
+    height: 10px;
+    text-align: center;
+    font-size: 17px;
+}
+
+.selectedItemInTooltip {
+    margin: 3px !important;
+}
+
+@keyframes myPulseAnimate {
+    0% {
+        box-shadow: 0 0 0 0 rgb(0,255,0, 0.22), 0 0 0 0 rgb(0,255,0, 0.7);
+    }
+
+    40% {
+        box-shadow: 0 0 0 30px rgb(0, 255,0, 0), 0 0 0 0 rgb(0,255,0, 0.22);
+    }
+
+    80% {
+        box-shadow: 0 0 0 30px rgb(0,255,0, 0), 0 0 0 15px rgb(0,255,0, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgb(0,255,0, 0), 0 0 0 15px rgb(0,255,0, 0);
+    }
+}

@@ -11,12 +11,16 @@
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>
 
+@*<i class="myPulse fadeIn animated float-end bxSecilen"></i>*@
+
 <div>
     <select class="col-1 js-example-basic-multiple" name="" id="mySelect" multiple="multiple">
         @for (int i = 0; i < 10; i++)
         {
             <option value="@i">opiton @i</option>
         }
+
+        @*<option value="a" selected> asd</option>*@
     </select>
 </div>
 <br />
@@ -32,6 +36,7 @@
         {
             <option value="@i">opiton @i</option>
         }
+        
     </select>
 </div>
 
@@ -46,8 +51,8 @@
         //init('.js-example-basic-multiple', options);
 
 
-        $('#mySelect').select2nice({ textSelected :"seçiniz"});
-        $('#mySelectA').select2nice({ textSelected: "seçülen" });
+        $('#mySelect').select2nice({ textSelected :"seçili"});
+        $('#mySelectA').select2();
 
     });
 
