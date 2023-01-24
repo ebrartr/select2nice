@@ -25,28 +25,28 @@
         let baseObj = null;// html select objesidir
         let s2Obj = null;// select2 objesidir
         let siblingObj = null;// select2 objesine karşılık ekrana eklenen objedir
-        let siblingCopy = null;// ekrandaki select2 objesinin kopyası alınır ki aynı genişlik vb. stillerle içine kendi custom değerlerimizi yazabilelim
+        let niceInfoBox = null;// ekrandaki select2 objesinin kopyası alınır ki aynı genişlik vb. stillerle içine kendi custom değerlerimizi yazabilelim
 
         baseObj = $('#' + settings.selector);
         s2Obj = baseObj.select2();
         siblingObj = $($(s2Obj[0].nextSibling)[0]);
         siblingObj.addClass('siblingClassCustom');
 
-        siblingCopy = siblingObj.clone();
-        siblingCopy.settings = settings;
-        siblingCopy.addClass('select2Copy');
-        siblingCopy.insertAfter(siblingObj);
+        niceInfoBox = siblingObj.clone();
+        niceInfoBox.settings = settings;
+        niceInfoBox.addClass('select2Copy');
+        niceInfoBox.insertAfter(siblingObj);
         
-        siblingCopy.refresh = function () {
+        niceInfoBox.refresh = function () {
 
             siblingObj.find('.select2-search__field').css('width', 'unset');
             siblingObj.find('.select2-search__field').attr('placeholder', baseObj.val().length + ' ' + settings.textSelected);
 
             if (baseObj.val() && baseObj.val().length) {
 
-                siblingCopy.addClass("itemSelected");
+                niceInfoBox.addClass("itemSelected");
 
-                var selectedTexts = $('#' + siblingCopy.settings.selector + ' option:selected').map(function () {
+                var selectedTexts = $('#' + niceInfoBox.settings.selector + ' option:selected').map(function () {
                     return '<span class=&quot;badge bg-info text-dark&quot;>' + $(this).text() + '</span>';
                 }).get().join(' ');
 
@@ -54,42 +54,42 @@
 
                 faSelected.tooltip();
 
-                siblingCopy.html('<span class="selectedCount">' + baseObj.val().length + '</span> ' + '<span class="textSelected">' + settings.textSelected + '</span>');
-                siblingCopy.append(faSelected);
+                niceInfoBox.html('<span class="selectedCount">' + baseObj.val().length + '</span> ' + '<span class="textSelected">' + settings.textSelected + '</span>');
+                niceInfoBox.append(faSelected);
 
             } else {
 
-                siblingCopy.removeClass("itemSelected");
-                siblingCopy.setNotSelected();
+                niceInfoBox.removeClass("itemSelected");
+                niceInfoBox.setNotSelected();
             }
         }
-        siblingCopy.setNotSelected = function () {
-            siblingCopy.html('<span class="selectedCount">0</span> <span class="textSelected">' + siblingCopy.settings.textSelected + '</span>');
+        niceInfoBox.setNotSelected = function () {
+            niceInfoBox.html('<span class="selectedCount">0</span> <span class="textSelected">' + niceInfoBox.settings.textSelected + '</span>');
         }
 
-        siblingCopy.refresh();
+        niceInfoBox.refresh();
 
         siblingObj.hide();
 
         baseObj.on('select2:close', function () {
 
-            siblingCopy.refresh();
+            niceInfoBox.refresh();
 
-            siblingCopy.show();
+            niceInfoBox.show();
             siblingObj.hide();
         });
 
         baseObj.on('select2:select', function () {
 
-            siblingCopy.refresh();
+            niceInfoBox.refresh();
         });
 
         baseObj.on('select2:unselect', function () {
 
-            siblingCopy.refresh();
+            niceInfoBox.refresh();
         });
 
-        siblingCopy.click(function () {
+        niceInfoBox.click(function () {
 
             siblingObj.show();
 
