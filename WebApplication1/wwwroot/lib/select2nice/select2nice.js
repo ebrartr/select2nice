@@ -8,7 +8,10 @@
         var settings = $.extend({}, {
 
             selector: $(this).attr("id"),
-            textSelected: "selected"
+            textSelected: "selected",
+            select2Options: {
+                allowClear:false
+            }
 
         }, selectOptions);
 
@@ -28,7 +31,7 @@
         let niceInfoBox = null;// ekrandaki select2 objesinin kopyası alınır ki aynı genişlik vb. stillerle içine kendi custom değerlerimizi yazabilelim
 
         baseObj = $('#' + settings.selector);
-        s2Obj = baseObj.select2();
+        s2Obj = baseObj.select2(settings.select2Options);
         siblingObj = $($(s2Obj[0].nextSibling)[0]);
         siblingObj.addClass('siblingClassCustom');
 
@@ -50,12 +53,11 @@
                     return '<span class=&quot;badge bg-info text-dark&quot;>' + $(this).text() + '</span>';
                 }).get().join(' ');
 
-                faSelected = $('<a data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true" title="' + selectedTexts + '"><i class="myPulse fadeIn animated float-end bxSecilen"></i></a>');
-
-                faSelected.tooltip();
+                let pulseInfo = $('<a data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true" title="' + selectedTexts + '"><i class="myPulse fadeIn animated float-end bxSecilen"></i></a>');
+                pulseInfo.tooltip();
 
                 niceInfoBox.html('<span class="selectedCount">' + baseObj.val().length + '</span> ' + '<span class="textSelected">' + settings.textSelected + '</span>');
-                niceInfoBox.append(faSelected);
+                niceInfoBox.append(pulseInfo);
 
             } else {
 
