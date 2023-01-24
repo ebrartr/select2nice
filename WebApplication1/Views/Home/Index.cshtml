@@ -1,0 +1,55 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+<link href="~/lib/select2/select2.min.css" rel="stylesheet" />
+<link href="~/lib/select2nice/select2nice.css" rel="stylesheet" />
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+<div>
+    <select class="col-1 js-example-basic-multiple" name="" id="mySelect" multiple="multiple">
+        @for (int i = 0; i < 10; i++)
+        {
+            <option value="@i">opiton @i</option>
+        }
+    </select>
+</div>
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<div>
+    <select class="col-1 js-example-basic-multiple" name="" id="mySelectA" multiple="multiple">
+        @for (int i = 0; i < 10; i++)
+        {
+            <option value="@i">opiton @i</option>
+        }
+    </select>
+</div>
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/select2/select2.min.js"></script>
+<script src="~/lib/select2nice/select2nice.js"></script>
+
+<script>
+
+    $(document).ready(function () {
+
+        //init('.js-example-basic-multiple', options);
+
+
+        $('#mySelect').select2nice({ textSelected :"seçiniz"});
+        $('#mySelectA').select2nice({ textSelected: "seçülen" });
+
+    });
+
+
+</script>
