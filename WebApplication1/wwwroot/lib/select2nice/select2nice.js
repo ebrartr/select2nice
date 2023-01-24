@@ -33,8 +33,7 @@
         siblingObj.addClass('siblingClassCustom');
 
         siblingCopy = siblingObj.clone();
-        siblingCopy.selector = settings.selector;
-        siblingCopy.textSelected = settings.textSelected;
+        siblingCopy.settings = settings;
         siblingCopy.addClass('select2Copy');
         siblingCopy.insertAfter(siblingObj);
         
@@ -47,7 +46,7 @@
 
                 siblingCopy.addClass("itemSelected");
 
-                var selectedTexts = $('#' + siblingCopy.selector + ' option:selected').map(function () {
+                var selectedTexts = $('#' + siblingCopy.settings.selector + ' option:selected').map(function () {
                     return '<span class=&quot;badge bg-info text-dark&quot;>' + $(this).text() + '</span>';
                 }).get().join(' ');
 
@@ -65,7 +64,7 @@
             }
         }
         siblingCopy.setNotSelected = function () {
-            siblingCopy.html('<span class="selectedCount">0</span> <span class="textSelected">' + siblingCopy.textSelected + '</span>');
+            siblingCopy.html('<span class="selectedCount">0</span> <span class="textSelected">' + siblingCopy.settings.textSelected + '</span>');
         }
 
         siblingCopy.refresh();
