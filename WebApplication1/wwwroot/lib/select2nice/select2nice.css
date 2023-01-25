@@ -32,6 +32,11 @@
     background-color: transparent;
     padding: 0.375rem 0.75rem;
     font-size: 1rem;
+
+    box-sizing: border-box;
+    display: inline-block;
+    margin: 0;
+    position: relative;
 }
 
 .itemSelected {
@@ -114,4 +119,14 @@
     100% {
         box-shadow: 0 0 0 0 rgb(0,255,0, 0), 0 0 0 15px rgb(0,255,0, 0);
     }
+}
+
+
+.toolMainDiv{
+    width:10px !important;
+}
+
+
+.deleteButton {
+    color: red !important;
 }
