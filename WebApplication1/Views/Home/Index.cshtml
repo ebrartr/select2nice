@@ -14,6 +14,8 @@
 <i class="text-dark-50 fonticon-trash-bin fs-2x"></i>
 @*<i class="myPulse fadeIn animated float-end bxSecilen"></i>*@
 
+<i class="bi bi-check-square-fill"></i>
+
 <div>
     <select class="col-1 js-example-basic-multiple" name="" id="mySelect" multiple="multiple">
         @for (int i = 0; i < 10; i++)
@@ -52,7 +54,7 @@
         //init('.js-example-basic-multiple', options);
 
 
-        $('#mySelect').select2nice({ textSelected :"seçili"});
+        $('#mySelect').select2nice({ textSelected :"selected"});
         $('#mySelectA').select2();
 
     });

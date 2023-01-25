@@ -129,4 +129,22 @@
 
 .deleteButton {
     color: red !important;
+    padding:0px !important;
+}
+
+.selectAllButton{
+    color:blue !important;
+    padding:0px !important;
+}
+
+.infoBoxTools{
+    width:auto !important;
+    margin-right:30px !important;
+    border-left:0px !important;
+    border-radius:0 0.25rem 0.25rem 0;
+}
+
+.infoBox {
+    border-radius: 0.25rem 0 0 0.25rem !important;
+    border-right:0px !important;
 }
