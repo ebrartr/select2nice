@@ -153,7 +153,7 @@ var niceConsts = {
                 nice.notSelected();
                 nice.hideDeleteIcon();
                 nice.hidePulse();
-                nice.mainDiv.prop('title', '');
+                nice.mainDiv.prop('title', ' ');
             }
 
             $('.nice-tooltip').tooltip();
