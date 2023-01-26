@@ -1,6 +1,14 @@
 ﻿
 // @ebrar haşlak 2023
 
+/*
+ 
+ dependencies 
+ Bootstrap v5.0.0
+ Select2 4.1.0-rc.0
+
+ */
+
 var niceConsts = {
 
     deleteIconHtml: `<svg width="16" height="16" fill="currentColor" class="deleteButton" viewBox="0 0 16 16">
