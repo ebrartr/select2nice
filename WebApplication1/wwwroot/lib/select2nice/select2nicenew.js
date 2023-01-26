@@ -131,7 +131,7 @@ var niceConsts = {
         nice.refresh = function () {
 
             $('.nice-tooltip').tooltip('dispose');
-
+            
             nice.siblingObj.find('.select2-search__field').css('width', 'unset');
             nice.siblingObj.find('.select2-search__field').attr('placeholder', nice.baseObj.val().length + ' ' + nice.settings.textSelected);
 
@@ -164,16 +164,21 @@ var niceConsts = {
             nice.siblingShow();
             nice.hide();
             nice.siblingClick();
+
         });
 
-        nice.deleteIcon.click(function () {
+        nice.deleteIcon.click(function (e) {
+
+            e.stopPropagation();
 
             nice.baseObj.val('');
             nice.baseObj.trigger('change');
             nice.refresh();
         });
 
-        nice.selectAllIcon.click(function () {
+        nice.selectAllIcon.click(function (e) {
+
+            e.stopPropagation();
 
             alert('select all');
 
