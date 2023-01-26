@@ -16,7 +16,7 @@
 @*<i class="myPulse fadeIn animated float-end bxSecilen"></i>*@
 
 <i class="bi bi-check-square-fill"></i>
-
+@*
 <div>
     <select class="col-1 js-example-basic-multiple" name="" id="mySelect" multiple="multiple">
         @for (int i = 0; i < 10; i++)
@@ -24,7 +24,7 @@
             <option value="@i">opiton @i</option>
         }
 
-        @*<option value="a" selected> asd</option>*@
+        <option value="a" selected> asd</option>
     </select>
 </div>
 <br />
@@ -33,7 +33,7 @@
 <br />
 <br />
 <br />
-<br />
+<br />*@
 <div>
     <select class="col-1 js-example-basic-multiple" name="" id="mySelectA" multiple="multiple">
         @for (int i = 0; i < 10; i++)
@@ -41,12 +41,14 @@
             <option value="@i">opiton @i</option>
         }
         
+        <option value="a" selected> asd</option>
+        <option value="b" selected> asd2</option>
     </select>
 </div>
 
 <script src="~/lib/jquery/dist/jquery.min.js"></script>
 <script src="~/lib/select2/select2.min.js"></script>
-<script src="~/lib/select2nice/select2nice.js?v=@Guid.NewGuid()"></script>
+@*<script src="~/lib/select2nice/select2nice.js?v=@Guid.NewGuid()"></script>*@
 <script src="~/lib/select2nice/select2nicenew.js?v=@Guid.NewGuid()"></script>
 
 <script>
@@ -56,8 +58,8 @@
         //init('.js-example-basic-multiple', options);
 
 
-        $('#mySelect').select2nice({ textSelected :"seçim"});
-        $('#mySelectA').select2nicenew({ textSelected: "seçimim" });
+        //$('#mySelect').select2nice({ textSelected :"seçim"});
+        $('#mySelectA').select2nicenew({ textSelected: "Seçim" });
 
     });
 

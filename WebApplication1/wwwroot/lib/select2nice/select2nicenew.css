@@ -52,14 +52,6 @@
 }
 
 
-
-
-.fadeIn {
-    -webkit-animation-name: fadeIn;
-    animation-name: fadeIn;
-}
-
-
 .myPulse {
     background-color: rgb(0,255,0, 1);
     border-radius: 50%;
@@ -176,4 +168,28 @@
 
 .itemSelected {
     color: #28a745 !important;
+}
+
+
+.tooltip-inner {
+    background-color: rgba(210, 244, 249, 0.5);
+    opacity: 0.2;
+    box-shadow: 0px 0px 4px black;
+    opacity: 1 !important;
+}
+
+.tooltip.bs-tooltip-right .tooltip-arrow::before {
+    border-right-color: #d2f4f9 !important;
+}
+
+.tooltip.bs-tooltip-left .tooltip-arrow::before {
+    border-left-color: #d2f4f9 !important;
+}
+
+.tooltip.bs-tooltip-bottom .tooltip-arrow::before {
+    border-bottom-color: #d2f4f9 !important;
+}
+
+.tooltip.bs-tooltip-top .tooltip-arrow::before {
+    border-top-color: #2f4fff !important;
 }

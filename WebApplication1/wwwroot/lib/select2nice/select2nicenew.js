@@ -58,8 +58,7 @@ var niceConsts = {
         // info
         nice.insertAfter(siblingObj);
         nice.addClass('nice')
-        nice.mainDiv = $('<table data-toggle="tooltip" data-placement="bottom" data-html="true" class="nice-table"></table>');
-        nice.mainDiv.addClass('fadeIn');
+        nice.mainDiv = $('<table data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true" class="nice-table"></table>');
         nice.mainDivRow = $('<tr></tr>');
         nice.mainDiv.append(nice.mainDivRow);
 
@@ -71,7 +70,7 @@ var niceConsts = {
 
         nice.mainDivRow2 = $('<tr></tr>');
         nice.mainDiv.append(nice.mainDivRow2);
-        nice.messageTd = $(`<td class="nice-message-td" colspan="3" style="text-align:center"></td>`);
+        nice.messageTd = $(`<td class="nice-message-td" colspan="4" style="text-align:center"></td>`);
         nice.messageTdSpan = $('<span class="nice-message-td-span text-primary text-center"></span>');
         nice.messageTd.append(nice.messageTdSpan);
         nice.messageTdSpan.html(settings.textSelected);
@@ -131,6 +130,8 @@ var niceConsts = {
 
         nice.refresh = function () {
 
+            $('[data-bs-toggle="tooltip"]').tooltip('dispose');
+
             nice.siblingObj.find('.select2-search__field').css('width', 'unset');
             nice.siblingObj.find('.select2-search__field').attr('placeholder', nice.baseObj.val().length + ' ' + nice.settings.textSelected);
 
@@ -155,7 +156,7 @@ var niceConsts = {
                 nice.mainDiv.prop('title', '');
             }
 
-            $('[data-toggle="tooltip"]').tooltip();
+            $('[data-bs-toggle="tooltip"]').tooltip();
         }
 
         nice.click(function () {
