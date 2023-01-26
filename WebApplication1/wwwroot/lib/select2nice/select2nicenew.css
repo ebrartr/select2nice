@@ -39,9 +39,7 @@
     position: relative;
 }
 
-.itemSelected {
-    color: #28a745 !important;
-}
+
 
 .selectedCount {
     color: #007bff !important;
@@ -147,4 +145,35 @@
 .infoBox {
     border-radius: 0.25rem 0 0 0.25rem !important;
     border-right:0px !important;
+}
+
+
+
+/*new*/
+
+.nice{
+    padding-top:1px !important;
+    padding-bottom:2px !important;
+}
+
+.nice-table{
+    line-height : 10px !important;
+    padding:0px;
+}
+
+.nice-message-td{
+    color:black !important;
+}
+
+.nice-message-td-span{
+    color: grey !important;
+    font-size:small;
+}
+
+.nice-selectall-icon {
+    color: blue !important;
+}
+
+.itemSelected {
+    color: #28a745 !important;
 }
