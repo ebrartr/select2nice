@@ -16,7 +16,7 @@
 @*<i class="myPulse fadeIn animated float-end bxSecilen"></i>*@
 
 <i class="bi bi-check-square-fill"></i>
-@*
+
 <div>
     <select class="col-1 js-example-basic-multiple" name="" id="mySelect" multiple="multiple">
         @for (int i = 0; i < 10; i++)
@@ -28,12 +28,8 @@
     </select>
 </div>
 <br />
+
 <br />
-<br />
-<br />
-<br />
-<br />
-<br />*@
 <div>
     <select class="col-1 js-example-basic-multiple" name="" id="mySelectA" multiple="multiple">
         @for (int i = 0; i < 10; i++)
@@ -59,6 +55,7 @@
 
 
         //$('#mySelect').select2nice({ textSelected :"seçim"});
+        $('#mySelect').select2nicenew({ textSelected: "Seçim" });
         $('#mySelectA').select2nicenew({ textSelected: "Seçim" });
 
     });

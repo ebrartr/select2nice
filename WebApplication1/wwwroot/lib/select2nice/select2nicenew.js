@@ -58,7 +58,7 @@ var niceConsts = {
         // info
         nice.insertAfter(siblingObj);
         nice.addClass('nice')
-        nice.mainDiv = $('<table data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true" class="nice-table"></table>');
+        nice.mainDiv = $('<table data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true" class="nice-table nice-tooltip"></table>');
         nice.mainDivRow = $('<tr></tr>');
         nice.mainDiv.append(nice.mainDivRow);
 
@@ -130,7 +130,7 @@ var niceConsts = {
 
         nice.refresh = function () {
 
-            $('[data-bs-toggle="tooltip"]').tooltip('dispose');
+            $('.nice-tooltip').tooltip('dispose');
 
             nice.siblingObj.find('.select2-search__field').css('width', 'unset');
             nice.siblingObj.find('.select2-search__field').attr('placeholder', nice.baseObj.val().length + ' ' + nice.settings.textSelected);
@@ -156,7 +156,7 @@ var niceConsts = {
                 nice.mainDiv.prop('title', '');
             }
 
-            $('[data-bs-toggle="tooltip"]').tooltip();
+            $('.nice-tooltip').tooltip();
         }
 
         nice.click(function () {
