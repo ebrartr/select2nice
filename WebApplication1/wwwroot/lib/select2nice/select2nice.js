@@ -188,7 +188,10 @@ var niceConsts = {
 
             e.stopPropagation();
 
-            alert('select all');
+            nice.baseObj.find('option').prop('selected', true);
+
+            nice.baseObj.trigger('change');
+            nice.refresh();
 
         });
 
